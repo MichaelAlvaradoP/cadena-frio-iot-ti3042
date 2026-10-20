@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Contenedor IoT Cadena de Frío</string>
+
+    <!-- Comunes -->
+    <string name="btn_siguiente">Siguiente</string>
+    <string name="btn_anterior">Anterior</string>
+    <string name="btn_confirmar">Confirmar</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="valor_vacio">--</string>
+
+    <!-- Portada -->
+    <string name="titulo_app">Contenedor IoT de Cadena de Frío</string>
+    <string name="subtitulo_app">Monitoreo y protección de vacunas e insulina</string>
+    <string name="integrante">Michael Alvarado</string>
+    <string name="seccion">TI3042 · Sección IEI-N4-P2-C2</string>
+
+    <!-- Login -->
+    <string name="titulo_login_acceso">Acceso</string>
+    <string name="hint_usuario">Usuario</string>
+    <string name="hint_clave">Contraseña</string>
+    <string name="btn_validacion">Validación</string>
+    <string name="error_usuario_vacio">Por favor ingrese el usuario</string>
+    <string name="error_clave_vacia">Por favor ingrese la contraseña</string>
+    <string name="msg_error_login_intentos">Usuario o contraseña incorrectos. Intentos restantes: %1$d</string>
+    <string name="msg_bloqueado">Demasiados intentos fallidos. Espere %1$d s para volver a intentar.</string>
+    <string name="msg_sin_usuarios">Aún no hay usuarios. Cree el primero para continuar.</string>
+    <string name="msg_usuario_creado">Usuario %1$s creado. Ingrese su contraseña.</string>
+    <string name="btn_crear_usuario">Crear usuario</string>
+
+    <!-- Registro en primer uso -->
+    <string name="titulo_registro">Crear usuario</string>
+    <string name="politica_credenciales">Usuario: 4 a 20 letras o números, sin espacios.\nContraseña: mínimo 8 caracteres, con al menos una letra y un número, y sin contener el usuario. Se guarda cifrada (hash PBKDF2 con sal), nunca en texto plano.</string>
+    <string name="hint_confirmar_clave">Confirmar contraseña</string>
+    <string name="btn_registrar">Registrar</string>
+    <string name="error_usuario_formato">Use de 4 a 20 letras o números, sin espacios</string>
+    <string name="error_clave_corta">Debe tener al menos 8 caracteres</string>
+    <string name="error_clave_sin_letra">Debe incluir al menos una letra</string>
+    <string name="error_clave_sin_numero">Debe incluir al menos un número</string>
+    <string name="error_clave_contiene_usuario">No puede contener el nombre de usuario</string>
+    <string name="error_claves_no_coinciden">Las contraseñas no coinciden</string>
+    <string name="error_usuario_existe">Ese usuario ya existe</string>
+
+    <!-- Descripción -->
+    <string name="titulo_descripcion_proyecto">Descripción del Proyecto</string>
+    <string name="cuerpo_descripcion">Las vacunas y la insulina deben conservarse entre 2 y 8 °C. Por encima de ese rango pierden potencia; por debajo, si llegan a congelarse, el daño es irreversible y el producto debe desecharse.\n\nEste proyecto instrumenta un contenedor aislado de transporte. El frío lo aportan, de forma pasiva, la aislación y las unidades refrigerantes: el sistema no fabrica frío. Su trabajo es medir, registrar, alertar y corregir el único desvío que la aislación no puede evitar, que es el congelamiento de los viales más próximos a la unidad refrigerante. Por eso su actuador térmico calienta en lugar de enfriar.\n\nActuadores: resistencia calefactora, ventilador de circulación, cerradura con servomotor MG90S, zumbador y LED de tres estados, gobernados por un Arduino.\n\nComunicación: el Arduino envía su estado cada 2 segundos por Bluetooth (módulo HC-06) a esta aplicación, y un ESP32 publica los mismos datos por WiFi/MQTT. Desde la app se puede bloquear o liberar la cerradura, silenciar la alarma, activar el modo demostración y ajustar los umbrales.</string>
+
+    <!-- Descripción: sensores utilizados -->
+    <string name="header_sensores_utilizados">Sensores utilizados</string>
+    <string name="sensor_ds18b20_nombre">3 × DS18B20 · temperatura digital</string>
+    <string name="sensor_ds18b20_detalle">Bus 1-Wire. Rango −55 a +125 °C, precisión ±0,5 °C entre −10 y +85 °C, resolución hasta 0,0625 °C.\nUbicación: zona de viales, junto a la unidad refrigerante y exterior. Si una sonda se desconecta, el Arduino informa −99,9.</string>
+    <string name="sensor_dht22_nombre">DHT22 · humedad y temperatura</string>
+    <string name="sensor_dht22_detalle">Humedad relativa 0 a 100 % (±2 a 5 %) y temperatura −40 a +80 °C (±0,5 °C). Entrega una lectura cada 2 s.\nUbicación: exterior del contenedor.</string>
+    <string name="sensor_tapa_nombre">Detección de tapa</string>
+    <string name="sensor_tapa_detalle">Informa si la tapa está abierta o cerrada; el Arduino cuenta las aperturas y avisa con el evento EVT TAPA.</string>
+
+    <!-- Sensores -->
+    <string name="info_sensor_titulo">Información del sensor</string>
+    <string name="estado_conforme">CONFORME</string>
+    <string name="estado_marginal">MARGINAL</string>
+    <string name="estado_excursion">EXCURSIÓN</string>
+    <string name="estado_sin_datos">ESPERANDO DATOS</string>
+    <string name="formato_fuente">Fuente: %1$s</string>
+    <string name="formato_fuente_demo">Fuente: %1$s · Modo demostración</string>
+    <string name="formato_ultima_lectura">Última lectura: %1$s</string>
+    <string name="header_lecturas">Lecturas de Sensores</string>
+    <string name="label_viales">Zona de viales (2–8 °C):</string>
+    <string name="label_refrig">Junto al refrigerante:</string>
+    <string name="label_exterior">Exterior:</string>
+    <string name="label_humedad">Humedad exterior:</string>
+    <string name="formato_temperatura">%1$.2f °C</string>
+    <string name="formato_humedad">%1$.0f %%</string>
+    <string name="sonda_desconectada">Sonda desconectada</string>
+    <string name="header_actuadores">Estado de Actuadores</string>
+    <string name="label_calefactor">Calefactor:</string>
+    <string name="label_ventilador">Ventilador:</string>
+    <string name="label_cerradura">Cerradura:</string>
+    <string name="label_tapa">Tapa:</string>
+    <string name="estado_activo">Activo</string>
+    <string name="estado_apagado">Apagado</string>
+    <string name="estado_bloqueada">Bloqueada</string>
+    <string name="estado_liberada">Liberada</string>
+    <string name="estado_cerrada">Cerrada</string>
+    <string name="estado_abierta">Abierta</string>
+    <string name="header_acumulados">Datos Acumulados</string>
+    <string name="label_min_fuera">Minutos fuera de rango:</string>
+    <string name="label_aperturas">Aperturas de tapa:</string>
+    <string name="formato_minutos">%1$d min</string>
+    <string name="formato_entero">%1$d</string>
+    <string name="btn_sistema_control">Sistema de control</string>
+    <string name="btn_ver_historial">Ver historial de lecturas</string>
+
+    <!-- Historial -->
+    <string name="titulo_historial">Historial de lecturas</string>
+    <string name="formato_resumen_historial">%1$d lecturas guardadas en SQLite · se muestran las últimas %2$d</string>
+    <string name="formato_fila_historial">%1$s · %2$s\nViales %3$s · Refrigerante %4$s\nExterior %5$s · Humedad %6$.0f %%</string>
+
+    <!-- Control -->
+    <string name="titulo_sistema_control">Sistema de control</string>
+    <string name="header_actuadores_automaticos">Actuadores automáticos</string>
+    <string name="nota_actuadores_automaticos">El Arduino enciende el calefactor y el ventilador según las temperaturas medidas. Aquí se muestra su estado.</string>
+    <string name="header_comandos">Comandos al contenedor</string>
+    <string name="sw_cerradura">Cerradura bloqueada</string>
+    <string name="sw_modo_demo">Modo demostración (umbrales estrechos)</string>
+    <string name="btn_silenciar_alarma_5m">Silenciar alarma 5 minutos</string>
+    <string name="header_umbrales_temperatura">Umbrales de Temperatura</string>
+    <string name="formato_umbral_inferior">Umbral inferior: %1$.1f °C</string>
+    <string name="formato_umbral_superior">Umbral superior: %1$.1f °C</string>
+    <string name="btn_aplicar_umbrales">Aplicar umbrales</string>
+    <string name="error_umbrales">El umbral inferior debe ser menor que el superior</string>
+    <string name="formato_ultimo_comando">Último comando enviado: %1$s</string>
+    <string name="header_conexion">Conexión</string>
+    <string name="btn_conectar_bluetooth">Conectar a contenedor Bluetooth</string>
+    <string name="btn_usar_simulador">Usar simulador interno</string>
+    <string name="sw_modo_contenedor">Modo contenedor: este teléfono emite por Bluetooth</string>
+    <string name="enlace_simulador">Enlace: simulador interno</string>
+    <string name="enlace_conectando">Enlace: conectando por Bluetooth…</string>
+    <string name="enlace_conectado">Enlace: conectado por Bluetooth</string>
+    <string name="enlace_desconectado">Enlace: desconectado. Vuelva a conectar</string>
+    <string name="enlace_sin_permiso">Enlace: falta el permiso de Bluetooth</string>
+    <string name="enlace_bluetooth_apagado">Enlace: Bluetooth apagado</string>
+    <string name="enlace_esperando_monitor">Modo contenedor: esperando un monitor…</string>
+    <string name="enlace_monitor_conectado">Modo contenedor: monitor conectado</string>
+    <string name="dialogo_dispositivos_titulo">Dispositivos emparejados</string>
+    <string name="msg_sin_emparejados">No hay dispositivos emparejados. Empareje el HC-06 u otro teléfono en Ajustes › Bluetooth.</string>
+    <string name="msg_bluetooth_apagado">Active el Bluetooth para continuar</string>
+    <string name="msg_sin_bluetooth">Este dispositivo no tiene Bluetooth</string>
+    <string name="msg_permiso_denegado">Sin el permiso de Bluetooth no se puede conectar</string>
+    <string name="dialogo_desbloqueo_titulo">Liberar cerradura</string>
+    <string name="dialogo_desbloqueo_mensaje">Al liberar la cerradura la tapa puede abrirse y el contenido queda expuesto al calor exterior y a accesos no autorizados. ¿Desea continuar?</string>
+</resources>

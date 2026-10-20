@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/colorFondo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_medium">
+
+        <!-- Titulo -->
+        <TextView
+            android:id="@+id/tvTituloControl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo_sistema_control"
+            android:textSize="@dimen/text_size_headline"
+            android:textStyle="bold"
+            android:textColor="@color/textoPrimario"
+            android:layout_marginBottom="@dimen/margin_medium" />
+
+        <!-- Conexión inalámbrica: simulador, monitor Bluetooth o modo contenedor -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:cardUseCompatPadding="true"
+            app:strokeColor="@color/colorSurface"
+            app:strokeWidth="@dimen/card_stroke_width"
+            android:layout_marginBottom="@dimen/margin_medium">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_medium">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/header_conexion"
+                    android:textSize="@dimen/text_size_large"
+                    android:textStyle="bold"
+                    android:textColor="@color/textoPrimario"
+                    android:layout_marginBottom="@dimen/margin_xsmall" />
+
+                <TextView
+                    android:id="@+id/tvEstadoEnlace"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/valor_vacio"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    android:textColor="@color/textoSecundario"
+                    android:layout_marginBottom="@dimen/margin_small" />
+
+                <!-- Monitor: conectarse a un HC-06 o a otro teléfono en modo contenedor -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnConectarBluetooth"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:text="@string/btn_conectar_bluetooth"
+                    app:cornerRadius="@dimen/corner_radius_small"
+                    android:layout_marginBottom="@dimen/margin_small" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUsarSimulador"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:text="@string/btn_usar_simulador"
+                    app:cornerRadius="@dimen/corner_radius_small"
+                    android:layout_marginBottom="@dimen/margin_small" />
+
+                <!-- Contenedor: este teléfono emite el simulador por Bluetooth -->
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/swModoContenedor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sw_modo_contenedor"
+                    android:textSize="@dimen/text_size_medium" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Comandos que acepta el Arduino: activan y desactivan -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:cardUseCompatPadding="true"
+            app:strokeColor="@color/colorSurface"
+            app:strokeWidth="@dimen/card_stroke_width"
+            android:layout_marginBottom="@dimen/margin_medium">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_medium">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/header_comandos"
+                    android:textSize="@dimen/text_size_large"
+                    android:textStyle="bold"
+                    android:textColor="@color/textoPrimario"
+                    android:layout_marginBottom="@dimen/margin_small" />
+
+                <!-- LOCK / UNLOCK -->
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/swCerradura"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sw_cerradura"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <!-- DEMO ON / DEMO OFF -->
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/swModoDemo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sw_modo_demo"
+                    android:textSize="@dimen/text_size_medium"
+                    android:layout_marginBottom="@dimen/margin_small" />
+
+                <!-- SIL -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSilenciar"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:text="@string/btn_silenciar_alarma_5m"
+                    app:cornerRadius="@dimen/corner_radius_small" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Actuadores que gobierna el Arduino: solo se muestran -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:cardUseCompatPadding="true"
+            app:strokeColor="@color/colorSurface"
+            app:strokeWidth="@dimen/card_stroke_width"
+            android:layout_marginBottom="@dimen/margin_medium">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_medium">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/header_actuadores_automaticos"
+                    android:textSize="@dimen/text_size_large"
+                    android:textStyle="bold"
+                    android:textColor="@color/textoPrimario"
+                    android:layout_marginBottom="@dimen/margin_xsmall" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nota_actuadores_automaticos"
+                    android:textSize="@dimen/text_size_small"
+                    android:textColor="@color/textoSecundario"
+                    android:layout_marginBottom="@dimen/margin_small" />
+
+                <!-- Calefactor -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/padding_xsmall">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/label_calefactor"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textColor="@color/textoSecundario" />
+
+                    <TextView
+                        android:id="@+id/tvCalefactorEstado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/valor_vacio"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold"
+                        android:textColor="@color/textoPrimario" />
+
+                </LinearLayout>
+
+                <!-- Ventilador -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/padding_xsmall">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/label_ventilador"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textColor="@color/textoSecundario" />
+
+                    <TextView
+                        android:id="@+id/tvVentiladorEstado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/valor_vacio"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold"
+                        android:textColor="@color/textoPrimario" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Umbrales: SET INF / SET SUP -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:cardUseCompatPadding="true"
+            app:strokeColor="@color/colorSurface"
+            app:strokeWidth="@dimen/card_stroke_width"
+            android:layout_marginBottom="@dimen/margin_medium">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_medium">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/header_umbrales_temperatura"
+                    android:textSize="@dimen/text_size_large"
+                    android:textStyle="bold"
+                    android:textColor="@color/textoPrimario"
+                    android:layout_marginBottom="@dimen/margin_small" />
+
+                <!-- Umbral Inferior -->
+                <TextView
+                    android:id="@+id/tvLabelInferior"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/valor_vacio"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textColor="@color/textoSecundario" />
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/sliderInferior"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:valueFrom="-5.0"
+                    android:valueTo="10.0"
+                    android:stepSize="0.5"
+                    android:value="2.0"
+                    android:layout_marginBottom="@dimen/margin_small" />
+
+                <!-- Umbral Superior -->
+                <TextView
+                    android:id="@+id/tvLabelSuperior"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/valor_vacio"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textColor="@color/textoSecundario" />
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/sliderSuperior"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:valueFrom="0.0"
+                    android:valueTo="20.0"
+                    android:stepSize="0.5"
+                    android:value="8.0"
+                    android:layout_marginBottom="@dimen/margin_medium" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAplicarUmbrales"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:text="@string/btn_aplicar_umbrales"
+                    app:cornerRadius="@dimen/corner_radius_small" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Último Comando -->
+        <TextView
+            android:id="@+id/tvUltimoComando"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/valor_vacio"
+            android:textSize="@dimen/text_size_medium"
+            android:textColor="@color/textoSecundario"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/margin_medium" />
+
+        <!-- Botón Anterior -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAnterior"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:text="@string/btn_anterior"
+            app:cornerRadius="@dimen/corner_radius_small"
+            android:layout_marginBottom="@dimen/margin_medium" />
+
+    </LinearLayout>
+
+</ScrollView>

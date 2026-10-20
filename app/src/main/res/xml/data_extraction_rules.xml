@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Reglas de respaldo para Android 12+.
+   La base de datos guarda los hashes de las credenciales y el historial del
+   contenedor: no se copia a la nube ni a otro teléfono (control de acceso, ISO 27400).
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="database" path="." />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="database" path="." />
+    </device-transfer>
+</data-extraction-rules>

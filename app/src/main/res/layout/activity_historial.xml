@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_medium"
+    android:background="@color/colorFondo">
+
+    <!-- Titulo -->
+    <TextView
+        android:id="@+id/tvTituloHistorial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_historial"
+        android:textSize="@dimen/text_size_headline"
+        android:textStyle="bold"
+        android:textColor="@color/textoPrimario"
+        android:layout_marginBottom="@dimen/margin_small" />
+
+    <!-- Cantidad de lecturas guardadas en SQLite -->
+    <TextView
+        android:id="@+id/tvResumenHistorial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/valor_vacio"
+        android:textSize="@dimen/text_size_medium"
+        android:textColor="@color/textoSecundario"
+        android:layout_marginBottom="@dimen/margin_small" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:cardCornerRadius="@dimen/corner_radius"
+        app:cardElevation="@dimen/card_elevation"
+        app:cardUseCompatPadding="true"
+        app:strokeColor="@color/colorSurface"
+        app:strokeWidth="@dimen/card_stroke_width"
+        android:layout_marginBottom="@dimen/margin_medium">
+
+        <ListView
+            android:id="@+id/lvLecturas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/colorSurface"
+            android:dividerHeight="@dimen/divider_height"
+            android:padding="@dimen/padding_small" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Botón Anterior -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAnteriorHistorial"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/btn_anterior"
+        app:cornerRadius="@dimen/corner_radius_small" />
+
+</LinearLayout>

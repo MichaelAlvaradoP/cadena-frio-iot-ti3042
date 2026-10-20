@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Android 15+ fuerza el modo "edge-to-edge": el contenido se dibuja bajo la
+        barra de estado y la barra de navegación. Como los layouts no manejan esos
+        márgenes, se desactiva para que el título y los botones no queden tapados.
+    -->
+    <style name="Theme.CadenaFrio" parent="Base.Theme.CadenaFrio">
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+    </style>
+</resources>

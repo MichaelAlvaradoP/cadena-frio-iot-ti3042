@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Relleno y Márgenes -->
+    <dimen name="padding_xsmall">4dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+    <dimen name="margin_xsmall">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+
+    <!-- Tamaños de Texto -->
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_medium">14sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_title">20sp</dimen>
+    <dimen name="value_text_size">22sp</dimen>
+    <dimen name="text_size_headline">24sp</dimen>
+
+    <!-- Indicador Semáforo -->
+    <dimen name="tamano_semaforo">56dp</dimen>
+
+    <!-- Componentes -->
+    <dimen name="corner_radius">12dp</dimen>
+    <dimen name="corner_radius_small">8dp</dimen>
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
+    <dimen name="card_stroke_width">1dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
+</resources>

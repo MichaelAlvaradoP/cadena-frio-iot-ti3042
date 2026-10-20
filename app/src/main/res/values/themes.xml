@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Tema base común a todas las versiones de Android (siempre claro: la paleta no tiene variante oscura) -->
+    <style name="Base.Theme.CadenaFrio" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Colores Primarios -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/colorFondo</item>
+
+        <!-- Colores de Superficie y Fondo -->
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="android:colorBackground">@color/colorFondo</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <!-- Tema aplicado en el Manifest; values-v35 lo redefine para Android 15+ -->
+    <style name="Theme.CadenaFrio" parent="Base.Theme.CadenaFrio" />
+</resources>

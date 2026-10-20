@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#12333A</color>
+    <color name="colorPrimaryDark">#0B2227</color>
+    <color name="colorSurface">#F2F5F4</color>
+    <color name="colorFondo">#FBFCFC</color>
+    <color name="textoPrimario">#12333A</color>
+    <color name="textoSecundario">#5C7A80</color>
+    <color name="estadoConforme">#2E7D32</color>
+    <color name="estadoMarginal">#D18E12</color>
+    <color name="estadoExcursion">#B7332A</color>
+    <!-- Fondo de la tarjeta de estado durante una excursión -->
+    <color name="fondoExcursion">#FFEBEE</color>
+    <color name="white">#FFFFFF</color>
+</resources>
